@@ -1,0 +1,38 @@
+header {
+  #carouselExampleIndicators {
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      height: 80px;
+      width: 40px;
+      background-color: white;
+      top: 35%;
+      border-radius: 4px;
+
+      span {
+        filter: invert(1);
+        transform: scale(0.9);
+      }
+    }
+
+    .carousel-control-prev {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    .carousel-control-next {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}
+
+main {
+  background: #EBEBEB;
+  height: 100vh;
+
+  img {
+    width: 100%;
+    margin-top: 65px;
+  }
+}

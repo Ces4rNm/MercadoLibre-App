@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Proxima Nova", -apple-system, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important;
+}
+
+.container {
+  max-width: 1220px;
+}
+
+.bg-warning {
+  background-color: #FFF159 !important;
+}
