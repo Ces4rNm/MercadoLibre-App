@@ -12,4 +12,6 @@ export class SaleHistoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  display_redirect_info: boolean = false;
+
 }
