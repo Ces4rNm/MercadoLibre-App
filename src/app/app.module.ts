@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { RegisterComponent } from './register/register.component';
 import { SharedModule } from './shared/shared.module';
+import { SaleHistoryComponent } from './sale-history/sale-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SigninComponent,
-    RegisterComponent
+    RegisterComponent,
+    SaleHistoryComponent
   ],
   imports: [
     BrowserModule,
