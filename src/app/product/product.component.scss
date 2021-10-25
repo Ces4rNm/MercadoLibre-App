@@ -1,0 +1,220 @@
+main {
+  background: #EBEBEB;
+  padding: 20px 0 64px;
+
+  .container {
+    header {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: center;
+      color: #c3c3c3;
+
+      img {
+        width: 50px;
+      }
+
+      h4 {
+        color: #666;
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0 0 0 8px;
+      }
+
+      a {
+        margin: 0 8px;
+        color: #3483fa;
+        text-decoration: none;
+
+        &:hover {
+          color: #1259c3;
+        }
+      }
+    }
+
+    .content {
+      &>.row {
+        &>.view {
+          &>ul {
+            float: left;
+            width: 48px;
+            padding: 0;
+            list-style: none;
+
+            li {
+              height: 48px;
+              border: 1px solid rgba(0, 0, 0, .25);
+              border-radius: 4px;
+              cursor: pointer;
+              margin-bottom: 8px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              img {
+                width: 100%;
+              }
+
+              &.active {
+                border: 2px solid #3483fa;
+              }
+            }
+          }
+
+          &>.zoom {
+            float: left;
+            width: calc(100% - 48px);
+            box-sizing: border-box;
+
+            .visible {
+              width: 100%;
+              overflow: hidden;
+
+              img {
+                width: 100%;
+
+                &:hover {
+                  cursor: zoom-in;
+                  transform: scale(1.5);
+                }
+              }
+            }
+          }
+
+          &>.description {
+            float: left;
+            border-top: 1px solid #0000001a;
+            padding-top: 40px;
+            width: 100%;
+          }
+
+        }
+
+        &>.detail {
+          border: 1px solid #0000001a;
+
+          &>.info {
+            .subtitle {
+              color: #0000008c;
+              font-size: 14px;
+              font-weight: 400;
+              white-space: pre-wrap;
+              margin-bottom: 8px;
+            }
+
+            .title {
+              color: #000000e6;
+              margin-bottom: 8px;
+              font-size: 22px;
+            }
+
+            .value {
+              color: #000000e6;
+              font-weight: 300;
+              font-size: 36px;
+            }
+
+            .pay {
+              margin-top: 20px;
+
+              img {
+                width: 150px;
+              }
+            }
+
+            .free-shipping {
+              color: #00a650;
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 16px;
+              margin: 20px 0;
+            }
+
+            .stock {
+              .available {
+                font-weight: 600;
+                font-size: 16px;
+                color: #000000e6;
+              }
+
+              .amount {
+                select {
+                  cursor: pointer;
+                  color: #000000e6;
+                  border: none;
+                  font-weight: 600;
+                  outline: none;
+                }
+              }
+            }
+
+            .btn {
+              width: 100%;
+              height: 44px;
+              transition: box-shadow .25s ease-out, background-color .2s ease-out;
+              box-shadow: 0 0 0 0 #fff;
+
+              &.btn-info {
+                margin-top: 24px;
+                border-color: transparent;
+                background-color: #3483fa;
+                color: #fff;
+
+                &:hover {
+                  background-color: #2968c8;
+                  color: #fff;
+                  -webkit-transition: background-color .2s ease-in;
+                  transition: background-color .2s ease-in;
+                }
+              }
+
+              &.btn-outline-info {
+                margin-top: 8px;
+                border-color: transparent;
+                background-color: #4189e626;
+                color: #3483fa;
+
+                &:hover {
+                  border-color: transparent;
+                  background-color: #4189e633;
+                  color: #3483fa;
+                  -webkit-transition: background-color .2s ease-in;
+                  transition: background-color .2s ease-in;
+                }
+              }
+            }
+
+            .protection {
+              margin-top: 24px;
+
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .header {
+      display: flex;
+      margin: 40px 0 0;
+
+      h2 {
+        color: #666;
+        font-size: 25px;
+        font-weight: 300;
+        margin: 0 0 0 8px;
+      }
+
+      a {
+        margin: 5px 0px 2px 16px;
+        color: #3483fa;
+        text-decoration: none;
+
+        &:hover {
+          color: #1259c3;
+        }
+      }
+    }
+  }
+}

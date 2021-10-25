@@ -1,1 +1,3 @@
-<router-outlet></router-outlet>
+<app-nav-bar *ngIf="appService.showNavBar"></app-nav-bar>
+<router-outlet (activate)="onActivate($event)"></router-outlet>
+<app-footer *ngIf="appService.showFooter"></app-footer>

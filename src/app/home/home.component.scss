@@ -1,5 +1,5 @@
 header {
-  #carouselExampleIndicators {
+  #carouselFixed {
 
     .carousel-control-prev,
     .carousel-control-next {
@@ -29,10 +29,67 @@ header {
 
 main {
   background: #EBEBEB;
-  height: 100vh;
+  padding-bottom: 64px;
 
-  img {
-    width: 100%;
-    margin-top: 65px;
+  .container {
+
+    section {
+      padding: 40px 0;
+
+      .header {
+        display: flex;
+        margin-bottom: 22px;
+
+        h2 {
+          color: #666;
+          font-size: 25px;
+          font-weight: 300;
+          margin: 0 0 0 8px;
+        }
+
+        a {
+          margin: 5px 0px 2px 16px;
+          color: #3483fa;
+          text-decoration: none;
+
+          &:hover {
+            color: #1259c3;
+          }
+        }
+      }
+    }
+
+    #info-1 {
+      padding-bottom: 0;
+    }
+
+    #info-1,
+    #suscribe {
+      img {
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+
+    #descubre {
+      .content {
+        display: flex;
+        justify-content: space-between;
+
+        img {
+          width: calc(50% - 7.5px);
+          border-radius: 4px;
+          box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+
+          &:hover {
+            cursor: pointer;
+            -webkit-transition: box-shadow .1s ease-out;
+            transition: box-shadow .1s ease-out;
+            box-shadow: 0 7px 16px 0 rgb(0 0 0 / 20%), 0 1px 3px 0 rgb(0 0 0 / 10%);
+          }
+        }
+      }
+    }
+
   }
 }

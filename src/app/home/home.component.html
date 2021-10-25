@@ -1,16 +1,15 @@
-<header>
-  <app-nav-bar></app-nav-bar>
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<header>  
+  <div id="carouselFixed" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+      <button type="button" data-bs-target="#carouselFixed" data-bs-slide-to="0" class="active"
         aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+      <button type="button" data-bs-target="#carouselFixed" data-bs-slide-to="1"
         aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+      <button type="button" data-bs-target="#carouselFixed" data-bs-slide-to="2"
         aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+      <button type="button" data-bs-target="#carouselFixed" data-bs-slide-to="3"
         aria-label="Slide 4"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+      <button type="button" data-bs-target="#carouselFixed" data-bs-slide-to="4"
         aria-label="Slide 5"></button>
     </div>
     <div class="carousel-inner">
@@ -30,12 +29,12 @@
         <img src="assets/img/carousel/5-banner.webp" class="d-block w-100" alt="5-banner">
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselFixed"
       data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselFixed"
       data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
@@ -44,7 +43,38 @@
 </header>
 <main>
   <div class="container">
-    <img src="assets/img/banner.png" alt="" srcset="">
+
+    <section id="info-1">
+      <img src="assets/img/info/banner.png">
+    </section>    
+
+    <app-offers></app-offers>
+
+    <section id="suscribe">
+      <img src="assets/img/info/suscribete.JPG">
+    </section>
+
+    <section id="suscribe">
+      <div class="header">
+        <h2>Beneficios de Mercado Puntos</h2>
+        <a href="//www.mercadolibre.com.co/mercado-puntos" id="view_more">Ver todos los beneficios</a>
+      </div>
+      <img src="assets/img/info/beneficios.JPG">
+    </section>
+
+    <section id="descubre">
+      <div class="header">
+        <h2>Descubre</h2>
+      </div>
+      <div class="content">
+        <img src="assets/img/info/descubre-1.JPG">
+        <img src="assets/img/info/descubre-2.JPG">
+      </div>
+    </section>
+
+    <app-categories></app-categories>
+
+    <app-record></app-record>
+
   </div>
 </main>
-<app-footer></app-footer>

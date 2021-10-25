@@ -1,0 +1,9 @@
+<main>
+  <div class="container">
+    <header>
+      <img [src]="category.img">
+      <h2>{{category.name}}</h2>
+    </header>
+    <app-products [categoryId]="category.id"></app-products>
+  </div>
+</main>

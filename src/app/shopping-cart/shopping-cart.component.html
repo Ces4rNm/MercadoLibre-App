@@ -1,0 +1,39 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <header>
+        <a [routerLink]="['/']">Inicio</a>
+        /
+        <h4>Mi carrito de compras</h4>
+      </header>
+      <div class="col-12">
+        <div class="bg-white content p-4 rounded">
+          <div class="row">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Foto</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Valor</th>
+                  <th scope="col">Envio gratis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of appService.shoppingCart; let i=index">
+                  <th scope="row">{{i}}</th>
+                  <td class="picture">
+                    <img [src]="item.imgs[0]">
+                  </td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.value}}</td>
+                  <td>{{item.freeShipping}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

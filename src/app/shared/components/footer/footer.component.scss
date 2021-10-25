@@ -1,0 +1,21 @@
+footer {
+  position: relative;
+  border-top: 2px solid #eee;
+
+  &>img {
+    width: 152px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -33px);
+    border: 2px solid #eee;
+    border-bottom: none;
+    border-radius: 4px;
+  }
+
+  .container {
+    img {
+      width: 100%;
+    }
+  }
+}

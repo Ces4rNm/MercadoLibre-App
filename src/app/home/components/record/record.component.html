@@ -1,0 +1,42 @@
+<section *ngIf="appService.record.length>0" id="record">
+  <div class="header">
+    <h2>Tu historial</h2>
+  </div>
+  <div class="content">
+    <div #carrousel_ class="carrousel">
+      <div #row_ class="row-new">
+        <div class="slider">
+          <div *ngFor="let product of appService.record;let i = index" (click)="open(product)"
+            [style.max-width.px]="cardWidth" [style.min-width.px]="cardWidth" class="card-new">
+            <div class="content">
+              <div class="picture">
+                <img #imgCat [src]="product.imgs[0]"
+                  (error)="imgCat.src='https://d3puay5pkxu9s4.cloudfront.net/pages/edutin-isotype-positive.svg'"
+                  [alt]="product.name">
+              </div>
+              <div class="description">
+                <div class="detail">
+                  <small *ngIf="product.discount>0">$
+                    {{product.value | discountPipe:product.discount | moneyPipe}}</small>
+                  <span class="value">$ {{product.value | moneyPipe}}</span>
+                  <span *ngIf="product.discount>0" class="discount">{{product.discount}}% OFF</span>
+                  <p *ngIf="product.freeShipping" class="free-shipping">Envío gratis</p>
+                </div>
+                <p class="name">{{product.name}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div #leftArrow_ [hidden]="appService.record.length<=cardsShow || translate==0" (click)="desplaceCards(false)"
+        class="displace left">
+        <img src="https://d3puay5pkxu9s4.cloudfront.net/academy/iconos/learn/icon-displace-left.svg">
+      </div>
+      <div #rigthArrow_
+        [hidden]="appService.record.length<=cardsShow || (translateAbs+rowWidth)>=(appService.record.length * cardWidth)"
+        (click)="desplaceCards(true)" class="displace rigth">
+        <img src="https://d3puay5pkxu9s4.cloudfront.net/academy/iconos/learn/icon-displace-rigth.svg">
+      </div>
+    </div>
+  </div>
+</section>

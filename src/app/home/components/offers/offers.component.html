@@ -1,0 +1,43 @@
+<section id="offers">
+  <div class="header">
+    <h2>Ofertas</h2>
+    <a
+      href="https://www.mercadolibre.com.co/ofertas#c_id=/home/promotions-recommendations/element&amp;c_uid=32ecee21-9c8a-4f2d-96df-8f4043b12363">Ver
+      todas</a>
+  </div>
+  <div class="content">
+    <div #carrousel_ class="carrousel">
+      <div #row_ class="row-new">
+        <div class="slider">
+          <div *ngFor="let offer of offers;let i = index" (click)="open(offer)"
+            [style.max-width.px]="cardWidth" [style.min-width.px]="cardWidth" class="card-new">
+            <div class="content">
+              <div class="picture">
+                <img #imgCat [src]="offer.imgs[0]"
+                  (error)="imgCat.src='https://d3puay5pkxu9s4.cloudfront.net/pages/edutin-isotype-positive.svg'"
+                  [alt]="offer.name">
+              </div>
+              <div class="description">
+                <div class="detail">
+                  <small *ngIf="offer.discount>0">$ {{offer.value | discountPipe:offer.discount | moneyPipe}}</small>
+                  <span class="value">$ {{offer.value | moneyPipe}}</span>
+                  <span *ngIf="offer.discount>0" class="discount">{{offer.discount}}% OFF</span>
+                  <p *ngIf="offer.freeShipping" class="free-shipping">Envío gratis</p>
+                </div>
+                <p class="name">{{offer.name}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div #leftArrow_ [hidden]="offers.length<=cardsShow || translate==0" (click)="desplaceCards(false)"
+        class="displace left">
+        <img src="https://d3puay5pkxu9s4.cloudfront.net/academy/iconos/learn/icon-displace-left.svg">
+      </div>
+      <div #rigthArrow_ [hidden]="offers.length<=cardsShow || (translateAbs+rowWidth)>=(offers.length * cardWidth)"
+        (click)="desplaceCards(true)" class="displace rigth">
+        <img src="https://d3puay5pkxu9s4.cloudfront.net/academy/iconos/learn/icon-displace-rigth.svg">
+      </div>
+    </div>
+  </div>
+</section>

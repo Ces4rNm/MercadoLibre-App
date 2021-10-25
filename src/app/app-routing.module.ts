@@ -1,15 +1,13 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { SigninComponent } from './signin/signin.component';
 
-const routes: Routes = [
-  // { path: '', redirectTo: '', pathMatch: 'full' },
-  {
-    path: '',
-    component: HomeComponent
-  },
+export const APP_ROUTES: Routes = [
+  { path: '', loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule) },
+  { path: 'category/:categoryId', loadChildren: () => import('./category/category.module').then(mod => mod.CategoryModule) },
+  { path: 'product/:productId', loadChildren: () => import('./product/product.module').then(mod => mod.ProductModule) },
+  { path: 'shopping-cart', loadChildren: () => import('./shopping-cart/shopping-cart.module').then(mod => mod.ShoppingCartModule) },
+  { path: 'my-shoppings', loadChildren: () => import('./my-shoppings/my-shoppings.module').then(mod => mod.MyShoppingsModule) },
   {
     path: 'signin',
     component: SigninComponent
@@ -24,8 +22,4 @@ const routes: Routes = [
   },
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);

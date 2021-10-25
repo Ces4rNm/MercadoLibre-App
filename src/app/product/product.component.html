@@ -1,0 +1,69 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <header>
+        <a [routerLink]="['/']">Inicio</a>
+        /
+        <a [routerLink]="['/category',category.id]">{{category.name}}</a>
+        /
+        <h4>{{appService.product.name}}</h4>
+      </header>
+      <div class="col-12">
+        <div class="bg-white content p-4 rounded">
+          <div class="row">
+            <div class="col-8 view">
+              <ul>
+                <li *ngFor="let img of appService.product.imgs; let i=index" (click)="viewImg=img"
+                  [ngClass]="{'active': viewImg==img}">
+                  <img [src]="img">
+                </li>
+              </ul>
+              <div class="zoom p-4">
+                <div class="visible">
+                  <img [src]="viewImg">
+                </div>
+              </div>
+              <div class="description">
+                {{appService.product.detail.description}}
+              </div>
+            </div>
+            <div class="col-4 detail">
+              <div class="info py-3">
+                <div class="subtitle">
+                  <span>Nuevo | {{appService.product.sales}} vendidos</span>
+                </div>
+                <h1 class="title">{{appService.product.name}}</h1>
+                <div class="value">
+                  <span>$ {{appService.product.value | moneyPipe}}</span>
+                </div>
+                <div class="pay">
+                  <img src="assets/img/product/pay.JPG">
+                </div>
+                <p *ngIf="appService.product.freeShipping" class="free-shipping">Envío gratis</p>
+                <div class="stock">
+                  <p class="available">Stock disponible</p>
+                  <p class="amount">Cantidad:
+                    <select>
+                      <option *ngFor="let item of  [1,2,3,4,5,6]" [value]="item">{{item}} unidad</option>
+                    </select> ({{appService.product.stock}} disponibles)</p>
+                </div>
+                <button class="btn btn-info">Comprar ahora</button>
+                <button (click)="addShoppingCart(appService.product)"
+                  class="btn btn-outline-info">{{isAddedShoppingCart?'Borrar del':'Agregar al'}} carrito</button>
+                <div class="protection">
+                  <img src="assets/img/product/protection.JPG">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="header">
+          <h2>Productos relacionados</h2>
+        </div>
+        <app-products [categoryId]="category.id"></app-products>
+      </div>
+    </div>
+  </div>
+</main>

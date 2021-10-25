@@ -1,0 +1,15 @@
+<section id="categories">
+  <div class="header">
+    <h2>Categorías populares</h2>
+  </div>
+  <div class="content">
+    <ul>
+      <li *ngFor="let category of appService.categories; let i=index">
+        <a [routerLink]="['/category',category.id]">
+          <img [src]="category.img">
+          <p>{{category.name}}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
