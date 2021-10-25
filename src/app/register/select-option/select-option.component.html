@@ -1,0 +1,125 @@
+<div class="container-fluid p-0  d-flex overflow-auto flex-column align-content-start flex-nowarp"
+    style="background-color:#ededed; height: calc(100vh - 60px);">
+    <!-- identificacion del producto -->
+    <div class="container-fluid d-flex justify-content-center p-0 " style="height: 40%; ">
+        <div class="row bg-light p-0 h-100 w-100">
+            <div class="col-12 d-flex justify-content-center align-items-center p-0 "
+                style="padding-bottom: 6rem !important;">
+                <div style="padding-right: 4em;">
+                    <span class="fs-6">Paso {{number_stage}} de 3</span>
+                    <h3>Empecemos identificando tu producto</h3>
+                </div>
+
+                <img src="https://http2.mlstatic.com/secure/sell/images/shoe-v2.svg" width="200" height="auto"
+                    alt="imagen de zapato" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <div class="container p-0 d-flex justify-content-center align-items-center position-relative" style="top:-13%">
+        <div class="card w-50 shadow rounded">
+            <a href="" class="card-header">Volver</a>
+
+            <!-- Nombre y descripcion del producto-->
+            <div class="card-body p-5 " [hidden]="number_stage != 1">
+                <!-- nombre del producto -->
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label texto-gray">Nombre del producto</label>
+                    <input type="text" class="form-control" id="nombre_producto" placeholder="Nombre del producto" [(ngModel)]="data_product.name">
+                </div>
+                <!-- Descripcion del producto -->
+                <div class="mb-3">
+                    <label for="descripcion_producto" class="form-label texto-gray">Descripcion del producto</label>
+                    <textarea class="form-control" id="descripcion_producto" rows="3"
+                        placeholder="Descripcion del producto" [(ngModel)]="data_product.description"></textarea>
+                </div>
+
+                <!-- botones -->
+                <div class="container-fluid p-0 d-flex justify-content-end">
+                    <button type="button" class="btn btn-outline-primary sell-item " (click)="number_stage=2">Siguiente</button>
+                </div>
+            </div>
+
+            
+            <!-- Ingreso de imagen del producto, stock -->
+            <div class="row g-0" [hidden]="number_stage != 2">
+                <div class="col-md-4">
+                    <img [src]="data_product.image_url == '' ? 'https://www.sinrumbofijo.com/wp-content/uploads/2016/05/default-placeholder.png' : data_product.image_url"
+                        style="height: 100%;" class="img-fluid rounded-start" alt="default image">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body p-3">
+                        <!-- Imagen del producto -->
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label texto-gray">Imagen del
+                                producto</label>
+                            <input type="text" class="form-control" id="URL_image" placeholder="https://exampleURL.com" 
+                            [(ngModel)]="data_product.image_url">
+                        </div>
+                        <!-- Cantidad del producto -->
+                        <div class="mb-3">
+                            <label for="amount_product" class="form-label">Cantidad del producto</label>
+                            <input type="number" class="form-control" id="amount_product" placeholder="Cantidad de productos"
+                            [(ngModel)]="data_product.amount_product">
+                        </div>
+
+                        <!-- botones -->
+                        <div class="container-fluid p-0 d-flex justify-content-between">
+                            <!-- (click)="number_stage = 1" -->
+                            <button type="button" class="btn btn-outline-primary sell-item " (click)="number_stage=1">Atras</button>
+                            <button type="button" class="btn btn-outline-primary sell-item " (click)="number_stage=3">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- seleccion y agregar categorias -->
+            <div class="card-body p-5 " [hidden]="number_stage != 3">
+                <!-- nombre del producto -->
+                <div class="mb-3">
+                    <!-- -->
+                    <select class="form-select mb-3" #Select aria-label="Default select example" (change)="select_option(Select.value)" >
+                        <option *ngFor="let category of list_category; let i = index" >{{category.name}}</option>
+                    </select>
+
+                    <!-- botones -->
+                <!-- (click)="prueba()" -->
+                    <div class="container-fluid p-0 d-flex justify-content-end">
+                        <button type="button" class="btn btn-outline-primary sell-item "
+                        (click)="add_category.push(select_category)">Agregar categoria</button>
+                    </div>
+                </div>
+                <!-- Listado de categorias añadidas -->
+                <div class="mb-3" >
+                    <ul class="list-group list-group-flush " *ngIf="add_category != null">
+                     
+                        <li class="list-group-item d-flex justify-content-between" *ngFor="let categories_add of add_category; let i = index" >
+                            <span> {{categories_add.name}} </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                viewBox="0 0 226 226" style=" fill:#000000;" (click)="add_category.splice(i,1)">
+                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray=""
+                                    stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
+                                    text-anchor="none" style="mix-blend-mode: normal">
+                                    <path d="M0,226v-226h226v226z" fill="none"></path>
+                                    <g fill="#e74c3c">
+                                        <path
+                                            d="M94.16667,18.83333l-9.41667,9.41667h-47.08333v18.83333h9.41667v141.25c0,4.91759 1.80168,9.93091 5.35205,13.48129c3.55037,3.55037 8.56369,5.35205 13.48128,5.35205h94.16667c4.91759,0 9.93091,-1.80168 13.48129,-5.35205c3.55037,-3.55038 5.35205,-8.5637 5.35205,-13.48129v-141.25h9.41667v-18.83333h-47.08333l-9.41667,-9.41667zM65.91667,47.08333h94.16667v141.25h-94.16667zM84.75,65.91667v103.58333h18.83333v-103.58333zM122.41667,65.91667v103.58333h18.83333v-103.58333z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- botones -->
+                <div class="container-fluid p-0 d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-primary sell-item " (click)="number_stage=2">Atras</button>
+                    <button type="button" class="btn btn-outline-primary sell-item " (click)="create_product()">Crear Producto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

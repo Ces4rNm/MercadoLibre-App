@@ -14,4 +14,6 @@ export class SaleHistoryComponent implements OnInit {
 
   display_redirect_info: boolean = false;
 
+  
+
 }

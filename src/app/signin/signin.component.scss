@@ -1,0 +1,43 @@
+.sell-item{
+    border-radius: 6px;
+    color: #ffff;
+    border-color: transparent;
+    background-color: #3483fa;
+    margin-bottom: 6px;
+    padding: 5px;
+
+    &:hover{
+        transition: background-color .2s ease-in;
+        -webkit-transition: background-color .2s ease-in;
+        -moz-transition: background-color .2s ease-in;
+        -ms-transition: background-color .2s ease-in;
+        -o-transition: background-color .2s ease-in;
+        background-color: #2968c8;
+        border-color: transparent;
+    }
+}
+
+.repurchase{
+    border-radius: 6px;
+    color: #3483fa;
+    border-color: transparent;
+    background-color: #fff;
+    padding: 5px;
+
+    &:hover{
+        transition: background-color .2s ease-in;
+        -webkit-transition: background-color .2s ease-in;
+        -moz-transition: background-color .2s ease-in;
+        -ms-transition: background-color .2s ease-in;
+        -o-transition: background-color .2s ease-in;
+        background-color: .2s ease-in;
+        border-color: transparent;
+        background-color: rgba(65,137,230,.15);
+    }
+}
+
+.form-label{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: rgba(0,0,0,.8) !important ;
+}

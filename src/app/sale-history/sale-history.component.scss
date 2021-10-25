@@ -105,6 +105,7 @@
         }
     }
 }
+
 .text-grey{
     font-size: 14px;
     color: rgba(88, 87, 87, 0.705);  
@@ -122,8 +123,6 @@
         border-color: #e6e6e6;
     }
 }
-
-
 
 .sell-item{
     border-radius: 6px;
@@ -163,3 +162,8 @@
     }
 }
 
+.color-more-info{
+    background-color: #f7f7f7 !important;
+    color: #666 !important; 
+    border-color: transparent !important;
+}

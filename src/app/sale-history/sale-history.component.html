@@ -12,15 +12,16 @@
     <div class="content-sell">
         <!-- titulo (compras, ventas) y cantidad -->
         <div class="header-sell">
-            <h2>Compras</h2>
-            <span>5 compras</span>
+            <h2>Productos</h2>
+            <span>5 Productos</span>
         </div>
 
         <!-- contenedor de compras -->
         <ul class="content-list-item">
+
             <li>
                 <!-- card de la info de la compra -->
-                <div class="card">
+                <div class="card shadow p-2 bg-white rounded">
 
                     <div class="time-purchase"> <span>14 de mayo</span> </div>
                     
@@ -56,7 +57,7 @@
 
             <li>
                 <!-- card de la info de la compra -->
-                <div class="card">
+                <div class="card shadow p-2 bg-white rounded">
 
                     <div class="time-purchase"> <span>14 de mayo</span> </div>
                     
@@ -92,7 +93,7 @@
 
             <li>
                 <!-- card de la info de la compra -->
-                <div class="card">
+                <div class="card shadow p-2 bg-white rounded">
 
                     <div class="time-purchase"> <span>14 de mayo</span> </div>
                     
@@ -128,7 +129,7 @@
             
             <li>
                 <!-- card de la info de la compra -->
-                <div class="card">
+                <div class="card shadow p-2 bg-white rounded">
 
                     <div class="time-purchase"> <span>14 de mayo</span> </div>
                     
@@ -164,7 +165,7 @@
 
             <li>
                 <!-- card de la info de la compra -->
-                <div class="card">
+                <div class="card shadow p-2 bg-white rounded">
 
                     <div class="time-purchase"> <span>14 de mayo</span> </div>
                     
@@ -202,93 +203,108 @@
     </div>
 
     <!-- mas informacion -->
-    <div style="display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: column;" hidden>
         <input type="checkbox"  id="select_label_info" [checked]="display_redirect_info" hidden>
-        <!-- vista de mas informacion -->
+        <!-- vista de mas informacion --> 
         <label for="select_label_info" (click)="display_redirect_info = !display_redirect_info" class="text-grey more_info">Mas informarcion</label>
         
         <!-- informacion en listas -->
-        <div class="content_info_redirect" [hidden]="!display_redirect_info">
-            <ul class="content_category_info">
-                <li class="category_info">
-                    <!-- nombre de la categoria de la informacion -->
-                    <span>Acerca de</span>
+       
+    </div>
 
-                    <!-- listado de la informacion -->
-                    <ul>
-                        <li class="text-grey line_jump">Mercado libre</li>
-                        <li class="text-grey line_jump">Investor relations</li>
-                        <li class="text-grey line_jump">Tendencias</li>
-                        <li class="text-grey">Sustentabilidad</li>
-                    </ul>
-                </li>
+    <!-- mas informacion -->
+    <div >
+        <!-- boton mas informacion  -->
+        <p class="d-flex justify-content-center">
+            <a class="btn btn-primary color-more-info" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+               mas informacion <i class="bi bi-caret-down-fill"></i>
+            </a>
+        </p>
 
-                <li class="category_info">
-                    <!-- nombre de la categoria de la informacion -->
-                    <span>Otros sitios</span>
-
-                    <!-- listado de la informacion -->
-                    <ul>
-                        <li class="text-grey line-jump">Developers</li>
-                        <li class="text-grey line-jump">Mercado Pago</li>
-                        <li class="text-grey line-jump">Mercado Envios</li>
-                        <li class="text-grey line-jump">Mercado Shops</li>
-                        <li class="text-grey line-jump">Mercado Ads</li>
-                        <li class="text-grey">Mercado Libre Ideas</li>
-                    </ul>
-                </li>
-
-                <li class="category_info">
-                    <!-- nombre de la categoria de la informacion -->
-                    <span>Ayuda/PQR</span>
-
-                    <!-- listado de la informacion -->
-                    <ul>
-                        <li class="text-grey line-jump">Comprar</li>
-                        <li class="text-grey line-jump">Vender</li>
-                        <li class="text-grey line-jump">Resolucion de problemas</li>
-                        <li class="text-grey">Centro de seguridad</li>
-                    </ul>
-                </li>
-
-                <li class="category_info">
-                    <!-- nombre de la categoria de la informacion -->
-                    <span>Redes sociales</span>
-
-                    <!-- listado de la informacion -->
-                    <ul>
-                        <li class="text-grey line-jump">Twitter</li>
-                        <li class="text-grey line-jump">Facebook</li>
-                        <li class="text-grey">Youtube</li>
-                    </ul>
-                </li>
-
-                <li class="category_info">
-                    <!-- nombre de la categoria de la informacion -->
-                    <span>Mi cuenta</span>
-
-                    <!-- listado de la informacion -->
-                    <ul>
-                        <li class="text-grey line-jump">Resumen</li>
-                        <li class="text-grey line-jump">Favoritos</li>
-                        <li class="text-grey ">Vender</li>
-                    </ul>
-                </li>
-
-                <li class="category_info"> 
-                    <!-- nombre de la categoria de la informacion -->
-                    <span>Mercado Puntos</span>
-
-                    <!-- listado de la informacion -->
-                    <ul>
-                        <li class="text-grey line-jump">Disney+</li>
-                        <li class="text-grey line-jump">Star+</li>
-                        <li class="text-grey ">HBO MAX</li>
-                    </ul>
-                </li>
-
-            </ul>
+        <div class="collapse" id="collapseExample">
+            <div class="content_info_redirect" >
+                <ul class="content_category_info">
+                    <li class="category_info">
+                        <!-- nombre de la categoria de la informacion -->
+                        <span>Acerca de</span>
+    
+                        <!-- listado de la informacion -->
+                        <ul>
+                            <li class="text-grey line_jump">Mercado libre</li>
+                            <li class="text-grey line_jump">Investor relations</li>
+                            <li class="text-grey line_jump">Tendencias</li>
+                            <li class="text-grey">Sustentabilidad</li>
+                        </ul>
+                    </li>
+    
+                    <li class="category_info">
+                        <!-- nombre de la categoria de la informacion -->
+                        <span>Otros sitios</span>
+    
+                        <!-- listado de la informacion -->
+                        <ul>
+                            <li class="text-grey line-jump">Developers</li>
+                            <li class="text-grey line-jump">Mercado Pago</li>
+                            <li class="text-grey line-jump">Mercado Envios</li>
+                            <li class="text-grey line-jump">Mercado Shops</li>
+                            <li class="text-grey line-jump">Mercado Ads</li>
+                            <li class="text-grey">Mercado Libre Ideas</li>
+                        </ul>
+                    </li>
+    
+                    <li class="category_info">
+                        <!-- nombre de la categoria de la informacion -->
+                        <span>Ayuda/PQR</span>
+    
+                        <!-- listado de la informacion -->
+                        <ul>
+                            <li class="text-grey line-jump">Comprar</li>
+                            <li class="text-grey line-jump">Vender</li>
+                            <li class="text-grey line-jump">Resolucion de problemas</li>
+                            <li class="text-grey">Centro de seguridad</li>
+                        </ul>
+                    </li>
+    
+                    <li class="category_info">
+                        <!-- nombre de la categoria de la informacion -->
+                        <span>Redes sociales</span>
+    
+                        <!-- listado de la informacion -->
+                        <ul>
+                            <li class="text-grey line-jump">Twitter</li>
+                            <li class="text-grey line-jump">Facebook</li>
+                            <li class="text-grey">Youtube</li>
+                        </ul>
+                    </li>
+    
+                    <li class="category_info">
+                        <!-- nombre de la categoria de la informacion -->
+                        <span>Mi cuenta</span>
+    
+                        <!-- listado de la informacion -->
+                        <ul>
+                            <li class="text-grey line-jump">Resumen</li>
+                            <li class="text-grey line-jump">Favoritos</li>
+                            <li class="text-grey ">Vender</li>
+                        </ul>
+                    </li>
+    
+                    <li class="category_info"> 
+                        <!-- nombre de la categoria de la informacion -->
+                        <span>Mercado Puntos</span>
+    
+                        <!-- listado de la informacion -->
+                        <ul>
+                            <li class="text-grey line-jump">Disney+</li>
+                            <li class="text-grey line-jump">Star+</li>
+                            <li class="text-grey ">HBO MAX</li>
+                        </ul>
+                    </li>
+    
+                </ul>
+            </div>
         </div>
+
     </div>
 
     <!-- footer con informacion -->
