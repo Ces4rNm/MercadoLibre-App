@@ -1,0 +1,41 @@
+.list-group-item{
+    user-select: none !important;
+    &:hover{
+        background-color: rgba(0,0,0,.04);
+        transition: background-color  .2s ease-in;
+        -webkit-transition: background-color  .2s ease-in;
+        -moz-transition: background-color  .2s ease-in;
+        -ms-transition: background-color  .2s ease-in;
+        -o-transition: background-color  .2s ease-in;
+        cursor: pointer;
+    }
+}
+.card-header{
+    background-color: #ffff !important;
+}
+
+.text-gray{
+    font-size: 14px;
+    color: rgba(88, 87, 87, 0.705) !important;  
+    margin: unset;
+    padding: unset; 
+}
+
+.sell-item{
+    border-radius: 6px;
+    color: #ffff;
+    border-color: transparent;
+    background-color: #3483fa;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+
+    &:hover{
+        transition: background-color .2s ease-in;
+        -webkit-transition: background-color .2s ease-in;
+        -moz-transition: background-color .2s ease-in;
+        -ms-transition: background-color .2s ease-in;
+        -o-transition: background-color .2s ease-in;
+        background-color: #2968c8;
+        border-color: transparent;
+    }
+}

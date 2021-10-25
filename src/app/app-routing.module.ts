@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { SigninComponent } from './signin/signin.component';
+import { SaleHistoryComponent } from './sale-history/sale-history.component'
 
 export const APP_ROUTES: Routes = [
   { path: '', loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule) },
@@ -9,12 +10,16 @@ export const APP_ROUTES: Routes = [
   { path: 'shopping-cart', loadChildren: () => import('./shopping-cart/shopping-cart.module').then(mod => mod.ShoppingCartModule) },
   { path: 'my-shoppings', loadChildren: () => import('./my-shoppings/my-shoppings.module').then(mod => mod.MyShoppingsModule) },
   {
-    path: 'signin',
+    path: 'user/login',
     component: SigninComponent
   },
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'sale/history',
+    component: SaleHistoryComponent
   },
   {
     path: '**',
