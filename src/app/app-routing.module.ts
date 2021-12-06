@@ -1,9 +1,10 @@
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
-import { SigninComponent } from './signin/signin.component';
 import { SaleHistoryComponent } from './sale-history/sale-history.component'
 import { HiddenNavBarFooterGuard } from './shared/guards/hidden-nav-bar-footer.guard';
 import { ShowNavBarFooterGuard } from './shared/guards/show-nav-bar-footer.guard';
+import { LoginComponent } from './user/login/login.component';
+import { AddComponent } from './user/add/add.component';
 
 export const APP_ROUTES: Routes = [
   {
@@ -33,13 +34,18 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: 'user/login',
-    component: SigninComponent,
+    component: LoginComponent,
     canActivate: [HiddenNavBarFooterGuard]
   },
   {
-    path: 'user/register',
-    component: RegisterComponent,
+    path: 'user/add',
+    component: AddComponent,
     canActivate: [HiddenNavBarFooterGuard]
+  },
+  {
+    path: 'sell-product',
+    component: RegisterComponent,
+    canActivate: [ShowNavBarFooterGuard]
   },
   {
     path: 'sale/history',

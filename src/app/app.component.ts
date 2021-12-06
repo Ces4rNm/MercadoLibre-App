@@ -8,7 +8,12 @@ import { AppService } from './app.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(public appService: AppService) { }
+  constructor(public appService: AppService) {
+    let storage = JSON.parse(localStorage.getItem("user_login"));
+    if (storage) {
+      this.appService.userData = storage;
+    }
+  }
 
   ngOnInit(): void {
 

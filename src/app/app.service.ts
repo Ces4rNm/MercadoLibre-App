@@ -14,7 +14,13 @@ export class AppService {
   shoppingCart: Array<any> = [];
   myShopping: Array<any> = [];
 
+  userData: any;
+
   constructor() {
+    const userLogin = localStorage.getItem('user_login');
+    if (userLogin) {
+      this.userData = JSON.parse(userLogin);
+    }
     this.categories = [
       {
         id: 1,

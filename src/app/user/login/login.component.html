@@ -1,0 +1,50 @@
+<div class="container-fluid p-0 min-vh-100 d-flex flex-column" style="background-color:#ededed;">
+  <!-- fondo amarillo -->
+  <div class="container-fluid p-0" style="background-color: #fff059; height: 12.370rem;">
+    <div class="container p-3">
+      <img [routerLink]="['/']" class="sticky-sm-top" src="assets/img/nav-bar/logo.png" alt="Imagen mercado libre">
+    </div>
+  </div>
+
+  <!-- crear usuario -->
+  <div class="container-sm d-flex justify-content-center p-0 position-relative" style="top: -2em;">
+    <div class="row">
+      <div class="col p-0">
+        <div class="card shadow bg-body rounded m-auto"
+          style="background-color: #fff; padding: 2rem 3rem !important; max-width: 26.5rem; ">
+          <h4 class="card-title" style="font-weight: 600; color: rgba(0,0,0,.8);">¡Hola! Para seguir, ingresa tu e-mail
+            y contraseña</h4>
+          <div class="card-body d-flex flex-column p-0">
+            <div style="padding: 15px 0;">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="Email" placeholder="name@example.com"
+                  [(ngModel)]="data_user.email">
+                <label for="floatingInput">Email</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="Password" placeholder="Password"
+                  [(ngModel)]="data_user.password">
+                <label for="floatingPassword">Password</label>
+              </div>
+            </div>
+
+            <button class="sell-item p-2" (click)="login()">Ingresar</button>
+            <button [routerLink]="['/user/add']" class="repurchase p-2">Crear cuenta</button>
+          </div>
+
+          <div class="card-body p-0" style="border-top: 1px solid rgba(0,0,0,.07);">
+            <button class="repurchase" style="width: 100%; padding: 10px;">Necesito ayuda para ingresar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="container-fluid p-3 bg-white d-flex flex-column mt-auto" style="align-items: center; ">
+    <a href="https://www.mercadolibre.com.co/privacidad" target="_blank" class="text-decoration-none pe-auto text-dark"
+      style="font-size: .875rem;">Cómo cuidamos tu privacidad</a>
+
+    <span class="text-muted" style="font-size: .875rem;">Copyright © 1999-2021 MercadoLibre Colombia LTDA.</span>
+  </div>
+</div>

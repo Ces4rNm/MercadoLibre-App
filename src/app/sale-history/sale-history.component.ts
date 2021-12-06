@@ -7,13 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaleHistoryComponent implements OnInit {
 
-  constructor() { }
+  product: Array<any> = [];
+
+  constructor() {
+    const product = localStorage.getItem('product');
+    if (product) {
+      this.product = JSON.parse(product);
+    }
+  }
 
   ngOnInit(): void {
   }
 
   display_redirect_info: boolean = false;
 
-  
+
 
 }

@@ -10,187 +10,46 @@
   <div class="content-sell">
     <!-- titulo (compras, ventas) y cantidad -->
     <div class="header-sell">
-      <h2>Productos</h2>
-      <span>5 Productos</span>
+      <h2>Mis productos</h2>
+      <span>{{product.length}} Productos</span>
     </div>
 
     <!-- contenedor de compras -->
     <ul class="content-list-item">
 
-      <li>
+      <li *ngFor="let item of product; let i=index">
         <!-- card de la info de la compra -->
         <div class="card shadow p-2 bg-white rounded">
 
-          <div class="time-purchase"> <span>14 de mayo</span> </div>
+          <div class="time-purchase"> <span>{{item.data_product.date}}</span> </div>
 
           <!-- info de la compra -->
           <div class="container-info-item">
 
-            <img src="https://http2.mlstatic.com/D_724288-MCO44218604515_122020-I.jpg" alt="imagen de cytus alpha"
-              style="flex-basis: 14%;">
+            <img [src]="item.data_product.image_url" alt="imagen de cytus alpha" style="flex-basis: 14%;">
 
             <!-- estado, tiempo de llegada, descripcion, cantidad -->
             <div class="info-item" style="flex-basis: 34%;">
-              <p class="success">Entregado</p>
-              <h4>Llego el 1 de junio</h4>
-              <span class="text-grey">Videojuego Cytus Alpha Bono Musica, Nintendo</span>
-              <span class="text-grey">1 unidad</span>
+              <p class="success">Publico</p>
+              <h4>{{item.data_product.name}}</h4>
+              <span class="text-grey">{{item.data_product.description}}</span>
+              <span class="text-grey">{{item.data_product.amount_product}} unidad</span>
             </div>
 
             <!-- informacion del vendedor, ver mensajes -->
             <div class="info-item" style="flex-basis: 20%;">
-              <p class="text-grey">SIMARO COLOMBIA S.A.S</p>
-              <a href="#">Ver mensajes</a>
+              <p class="text-grey">Categorias:</p>
+              <ul>
+                <li *ngFor="let cat of item.category; let i=index">
+                  {{cat.name}}
+                </li>
+              </ul>
             </div>
 
             <!-- contenedor de botones -->
             <div class="info-item" style="flex-basis: 18%;">
-              <button class="sell-item">Ver compra</button>
-              <button class="repurchase"> Volver a comprar</button>
-            </div>
-
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <!-- card de la info de la compra -->
-        <div class="card shadow p-2 bg-white rounded">
-
-          <div class="time-purchase"> <span>14 de mayo</span> </div>
-
-          <!-- info de la compra -->
-          <div class="container-info-item">
-
-            <img src="https://http2.mlstatic.com/D_724288-MCO44218604515_122020-I.jpg" alt="imagen de cytus alpha"
-              style="flex-basis: 14%;">
-
-            <!-- estado, tiempo de llegada, descripcion, cantidad -->
-            <div class="info-item" style="flex-basis: 34%;">
-              <p class="success">Entregado</p>
-              <h4>Llego el 1 de junio</h4>
-              <span class="text-grey">Videojuego Cytus Alpha Bono Musica, Nintendo</span>
-              <span class="text-grey">1 unidad</span>
-            </div>
-
-            <!-- informacion del vendedor, ver mensajes -->
-            <div class="info-item" style="flex-basis: 20%;">
-              <p class="text-grey">SIMARO COLOMBIA S.A.S</p>
-              <a href="#">Ver mensajes</a>
-            </div>
-
-            <!-- contenedor de botones -->
-            <div class="info-item" style="flex-basis: 18%;">
-              <button class="sell-item">Ver compra</button>
-              <button class="repurchase"> Volver a comprar</button>
-            </div>
-
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <!-- card de la info de la compra -->
-        <div class="card shadow p-2 bg-white rounded">
-
-          <div class="time-purchase"> <span>14 de mayo</span> </div>
-
-          <!-- info de la compra -->
-          <div class="container-info-item">
-
-            <img src="https://http2.mlstatic.com/D_724288-MCO44218604515_122020-I.jpg" alt="imagen de cytus alpha"
-              style="flex-basis: 14%;">
-
-            <!-- estado, tiempo de llegada, descripcion, cantidad -->
-            <div class="info-item" style="flex-basis: 34%;">
-              <p class="success">Entregado</p>
-              <h4>Llego el 1 de junio</h4>
-              <span class="text-grey">Videojuego Cytus Alpha Bono Musica, Nintendo</span>
-              <span class="text-grey">1 unidad</span>
-            </div>
-
-            <!-- informacion del vendedor, ver mensajes -->
-            <div class="info-item" style="flex-basis: 20%;">
-              <p class="text-grey">SIMARO COLOMBIA S.A.S</p>
-              <a href="#">Ver mensajes</a>
-            </div>
-
-            <!-- contenedor de botones -->
-            <div class="info-item" style="flex-basis: 18%;">
-              <button class="sell-item">Ver compra</button>
-              <button class="repurchase"> Volver a comprar</button>
-            </div>
-
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <!-- card de la info de la compra -->
-        <div class="card shadow p-2 bg-white rounded">
-
-          <div class="time-purchase"> <span>14 de mayo</span> </div>
-
-          <!-- info de la compra -->
-          <div class="container-info-item">
-
-            <img src="https://http2.mlstatic.com/D_724288-MCO44218604515_122020-I.jpg" alt="imagen de cytus alpha"
-              style="flex-basis: 14%;">
-
-            <!-- estado, tiempo de llegada, descripcion, cantidad -->
-            <div class="info-item" style="flex-basis: 34%;">
-              <p class="success">Entregado</p>
-              <h4>Llego el 1 de junio</h4>
-              <span class="text-grey">Videojuego Cytus Alpha Bono Musica, Nintendo</span>
-              <span class="text-grey">1 unidad</span>
-            </div>
-
-            <!-- informacion del vendedor, ver mensajes -->
-            <div class="info-item" style="flex-basis: 20%;">
-              <p class="text-grey">SIMARO COLOMBIA S.A.S</p>
-              <a href="#">Ver mensajes</a>
-            </div>
-
-            <!-- contenedor de botones -->
-            <div class="info-item" style="flex-basis: 18%;">
-              <button class="sell-item">Ver compra</button>
-              <button class="repurchase"> Volver a comprar</button>
-            </div>
-
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <!-- card de la info de la compra -->
-        <div class="card shadow p-2 bg-white rounded">
-
-          <div class="time-purchase"> <span>14 de mayo</span> </div>
-
-          <!-- info de la compra -->
-          <div class="container-info-item">
-
-            <img src="https://http2.mlstatic.com/D_724288-MCO44218604515_122020-I.jpg" alt="imagen de cytus alpha"
-              style="flex-basis: 14%;">
-
-            <!-- estado, tiempo de llegada, descripcion, cantidad -->
-            <div class="info-item" style="flex-basis: 34%;">
-              <p class="success">Entregado</p>
-              <h4>Llego el 1 de junio</h4>
-              <span class="text-grey">Videojuego Cytus Alpha Bono Musica, Nintendo</span>
-              <span class="text-grey">1 unidad</span>
-            </div>
-
-            <!-- informacion del vendedor, ver mensajes -->
-            <div class="info-item" style="flex-basis: 20%;">
-              <p class="text-grey">SIMARO COLOMBIA S.A.S</p>
-              <a href="#">Ver mensajes</a>
-            </div>
-
-            <!-- contenedor de botones -->
-            <div class="info-item" style="flex-basis: 18%;">
-              <button class="sell-item">Ver compra</button>
-              <button class="repurchase"> Volver a comprar</button>
+              <button class="sell-item">Editar</button>
+              <button class="repurchase">Borrar</button>
             </div>
 
           </div>

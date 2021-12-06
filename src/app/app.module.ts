@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
 import { AppComponent } from './app.component';
-import { SigninComponent } from './signin/signin.component';
 import { RegisterComponent } from './register/register.component';
 import { SaleHistoryComponent } from './sale-history/sale-history.component';
 import {FormsModule} from '@angular/forms';
@@ -11,13 +10,16 @@ import { SharedModule } from './shared/shared.module';
 import { AppService } from './app.service';
 import { APP_ROUTING } from './app-routing.module';
 import { RegisterModule } from './register/register.module';
+import { AddComponent } from './user/add/add.component';
+import { LoginComponent } from './user/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SigninComponent,
     RegisterComponent,
-    SaleHistoryComponent
+    SaleHistoryComponent,
+    AddComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

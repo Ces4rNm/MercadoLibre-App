@@ -36,39 +36,56 @@
           <a class="nav-link active" aria-current="page" [routerLink]="['/']">Categorías</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/']">Ofertas</a>
+          <a [routerLink]="['/']" class="nav-link">Ofertas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/']">Historial</a>
+          <a [routerLink]="['/']" class="nav-link">Historial</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/']">Supermercado</a>
+          <a [routerLink]="['/']" class="nav-link">Supermercado</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/']">Moda</a>
+          <a [routerLink]="['/']" class="nav-link">Moda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/']">Vender</a>
+          <a [routerLink]="['/sell-product']" class="nav-link">Vender</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/']">Ayud / PQR</a>
+          <a [routerLink]="['/']" class="nav-link">Ayud / PQR</a>
         </li>
       </ul>
-      <ul id="profile" class="navbar-nav">
-        <li class="nav-item">
-          <a [routerLink]="['/']" class="profile nav-link">
+      <ul *ngIf="appService.userData" id="profile" class="navbar-nav">
+        <div class="nav-item user">
+          <a class="nav-link dropdown-toggle menu" href="#" id="navbarDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
             <img src="assets/img/nav-bar/foto.JPG">
-            <span>Cesar</span>
+            <span>{{appService.userData.name}}</span>
           </a>
-        </li>
-        <li class="nav-item">
-          <a [routerLink]="['/my-shoppings']" class="myShoppings nav-link">Mis compras</a>
-        </li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a [routerLink]="['/my-shoppings']" class="dropdown-item">Mis compras</a></li>
+            <li><a [routerLink]="['/sell-product']" class="dropdown-item">Vender producto</a></li>
+            <li><a [routerLink]="['/sale/history']" class="dropdown-item">Mis productos</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <div (click)="exit()" class="dropdown-item">Salir</div>
+            </li>
+          </ul>
+        </div>
         <li class="nav-item">
           <a [routerLink]="['/shopping-cart']" class="shoppingCart nav-link">
             <img src="assets/img/nav-bar/cart.JPG">
             <small>{{appService.shoppingCart.length}}</small>
           </a>
+        </li>
+      </ul>
+      <ul *ngIf="!appService.userData" id="profile" class="navbar-nav">
+        <li class="nav-item">
+          <a [routerLink]="['/user/login']" class="myShoppings nav-link">Ingresar</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/user/add']" class="myShoppings nav-link">Crear cuenta</a>
         </li>
       </ul>
     </div>
